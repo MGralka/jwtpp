@@ -89,7 +89,7 @@ sp_rsa_key rsa::gen(int size) {
 sp_rsa_key rsa::load_from_file(const std::string &path, password_cb on_password) {
 	RSA *r;
 
-	auto f = up_file(::std::fopen(path.c_str(), "re"), ::std::fclose);
+	auto f = up_file(::std::fopen(path.c_str(), "r"), ::std::fclose);
 	if (!f) {
 		throw std::runtime_error("cannot open file " + path);
 	}
